@@ -24,6 +24,8 @@ you are testing in
 This project uses [dotenv](https://github.com/theskumar/python-dotenv) to store credentials
 and other values needed by the tests. Refer to the instructions for `python-dotenv` for
 details on how it works and check the `.env-dist` file for the values that you need to set.
+If you are going to use the `dotenv` approach, copy `.env-dist` to `.env` and fill in the
+required values.
 
 If you are going to run these tests on a build server, please consult the documentation for
 that specific build server on how to set the environment variables this test is expecting to
