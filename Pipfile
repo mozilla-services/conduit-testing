@@ -15,6 +15,7 @@ pytest = "*"
 pytest-bugzilla-notifier = "==1.1.8"
 phabricator = "*"
 requests = "*"
+python-dotenv = "*"
 
 
 [requires]
