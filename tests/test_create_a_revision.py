@@ -87,7 +87,7 @@ def test_create_a_revision(bugzilla_secure_user_one):
     assert createrevision_response.uri is not None
 
     '''
-    Now read back details of the revision and make sure values are as 
+    Now read back details of the revision and make sure values are as
     we expect them to be
     '''
     revision_id = createrevision_response.revisionid
@@ -103,13 +103,14 @@ def test_create_a_revision(bugzilla_secure_user_one):
     '''
     Now we need to read the bug and look for our attachment that proves
     Phabricator has updated the bug
-    
+
     The sleep statement is required because updating a bug does not happen
     instantly
-    
+
     This test only ever generates one attachment for the bug
     '''
     time.sleep(8)
+    content_type = 'text/x-phabricator-request'
     response = bugzilla_secure_user_one.get_attachments(bug_id)
     bug_info = response['bugs']
-    assert bug_info[str(bug_id)][0]['content_type'] == 'text/x-phabricator-request'
+    assert bug_info[str(bug_id)][0]['content_type'] == content_type
